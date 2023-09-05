@@ -64,14 +64,14 @@ export default function Intro() {
     }, [expertise, expertiseIndex, direction, pause]);
 
     return (
-        <section className="flex flex-col justify-center h-screen -mt-20 w-full lg:w-[60%] ">
+        <section className="flex flex-col justify-center min-h-screen w-full lg:w-[70%]">
             <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
             >
-                <h2 className="text-3xl font-medium text-gray-300">
+                <p className="text-3xl font-medium text-gray-300">
                     Hey 👋 I&apos;m
-                </h2>
+                </p>
                 <h1 className="text-5xl md:text-7xl font-bold mt-4">
                     Renato Freitas
                 </h1>
