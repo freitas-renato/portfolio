@@ -1,8 +1,15 @@
 "use client";
 
+import { MotionConfig } from "framer-motion";
 import { useState, useEffect } from "react";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { HiMail } from "react-icons/hi";
+import {HiDownload} from "react-icons/hi";
+
+import { motion } from "framer-motion";
+import Link from "next/link";
+
+import { socials } from "@/lib/data";
 
 const expertiseList = [
     "Embedded Systems.",
@@ -58,22 +65,45 @@ export default function Intro() {
 
     return (
         <section className="flex flex-col justify-center h-screen -mt-20 w-full lg:w-[60%] ">
-            <h2 className="text-3xl font-medium text-gray-300">
-                Hey 👋 I&apos;m
-            </h2>
-            <h1 className="text-5xl md:text-7xl font-bold mt-4">Renato Freitas</h1>
-            <p className="text-xl font-base text-zinc-500 mt-6 max-w-[95%]">
-                I&apos;m a Software Engineer with experience building{" "}
-                <span className="font-semibold text-zinc-400">
-                    {expertise} |{" "}
-                </span>
-            </p>
+            <motion.div
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+            >
+                <h2 className="text-3xl font-medium text-gray-300">
+                    Hey 👋 I&apos;m
+                </h2>
+                <h1 className="text-5xl md:text-7xl font-bold mt-4">
+                    Renato Freitas
+                </h1>
+                <p className="text-xl font-base text-zinc-500 mt-6 max-w-[95%]">
+                    I&apos;m a Software Engineer with experience building{" "}
+                    <span className="font-semibold text-zinc-400">
+                        {expertise} <span className="text-teal-400 animate-[pulse_1.5s_linear_infinite]">|</span>
+                    </span>
+                </p>
+            </motion.div>
+            <motion.div 
+                className="flex items-center justify-start mt-10 gap-4"
+                initial={{ opacity: 0, y: 100 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.1 }}
+            >
+                {socials.map((social) => (
+                    <a
+                        key={social.name}
+                        target="_blank"
+                        href={social.url}
+                        className="text-4xl text-zinc-400 hover:text-zinc-300 transition-all cursor-pointer hover:scale-110 active:scale-105"
+                    >
+                        {social.icon}
+                    </a>
+                ))}
 
-            <div className="flex items-center justify-start mt-10 gap-4">
-                <a target="_blank" href="https://github.com/freitas-renato/"> <AiFillGithub className="text-3xl text-zinc-400 hover:text-zinc-300 transition-all cursor-pointer" /> </a>
-                <a target="_blank" href="https://www.linkedin.com/in/renatooliveirafreitas/"> <AiFillLinkedin className="text-3xl text-zinc-400 hover:text-zinc-300 transition-all cursor-pointer" /></a>
-                <a target="_blank" href="mailto:freitas-renato@outlook.com"> <HiMail className="text-3xl text-zinc-400 hover:text-zinc-300 transition-all cursor-pointer" /></a>
-            </div>
+                {/* ToDo: Add resume link */}
+                <a href="#" className="group flex items-center gap-4 rounded-full bg-gradient-to-br from-teal-500 to-teal-800 px-6 py-2 text-zinc-200 text-base transition-all hover:font-semibold hover:scale-110 active:scale-105">
+                    Resume <HiDownload className="opacity-70 group-hover:animate-bounce transition-all"/>
+                </a>
+            </motion.div>
         </section>
     );
 }
