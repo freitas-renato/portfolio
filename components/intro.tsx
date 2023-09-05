@@ -57,7 +57,7 @@ export default function Intro() {
     }, [expertise, expertiseIndex, direction, pause]);
 
     return (
-        <div className="flex flex-col justify-center h-screen -mt-20 w-full lg:w-[60%] ">
+        <section className="flex flex-col justify-center h-screen -mt-20 w-full lg:w-[60%] ">
             <h2 className="text-3xl font-medium text-gray-300">
                 Hey 👋 I&apos;m
             </h2>
@@ -74,6 +74,6 @@ export default function Intro() {
                 <a target="_blank" href="https://www.linkedin.com/in/renatooliveirafreitas/"> <AiFillLinkedin className="text-3xl text-zinc-400 hover:text-zinc-300 transition-all cursor-pointer" /></a>
                 <a target="_blank" href="mailto:freitas-renato@outlook.com"> <HiMail className="text-3xl text-zinc-400 hover:text-zinc-300 transition-all cursor-pointer" /></a>
             </div>
-        </div>
+        </section>
     );
 }
