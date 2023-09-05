@@ -1,5 +1,8 @@
+"use client";
+
 import Link from "next/link";
 import {BsArrowRight} from "react-icons/bs";
+import {motion} from "framer-motion";
 
 export default function About() {
     function textEmphasis(text: string) {
@@ -7,7 +10,12 @@ export default function About() {
     }
 
     return (
-        <div className="flex flex-col  w-full lg:w-[70%]">
+        <motion.section 
+            className="flex flex-col mb-40 w-full lg:w-[70%] md:leading-8"
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
+            viewport={{ once: true, amount: 0.3}}
+        >
             <h2 className="text-4xl font-bold py-10">About Me</h2>
             <p className="text-lg text-zinc-400 py-3 text-justify ">
                 I&apos;m a Software Engineer born in Brazil, and currently
@@ -25,7 +33,7 @@ export default function About() {
                 having worked on IoT projects that involved developing{" "}
                 {textEmphasis("web apps for data visualization")} and control,
                 as well as backend infrastructure for data storage and
-                processing. 
+                processing, using {textEmphasis("React, Node.js, MySQL, InfluxDB and AWS")}.
             </p>
             <p className="text-lg text-zinc-400 py-3 text-justify ">
                 Strong problem-solving skills and ability to work well in a team
@@ -33,6 +41,6 @@ export default function About() {
                 projects.
             </p>
             <Link href="/about" className="flex items-center gap-3 group text-teal-400 font-semibold underline py-2">Read More <BsArrowRight className="group-hover:translate-x-2 transition-all"/></Link>
-        </div>
+        </motion.section>
     );
 }
