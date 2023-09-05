@@ -61,7 +61,7 @@ export default function Intro() {
             <h2 className="text-3xl font-medium text-gray-300">
                 Hey 👋 I&apos;m
             </h2>
-            <h1 className="text-7xl font-bold mt-4">Renato Freitas</h1>
+            <h1 className="text-5xl md:text-7xl font-bold mt-4">Renato Freitas</h1>
             <p className="text-xl font-base text-zinc-500 mt-6 max-w-[95%]">
                 I&apos;m a Software Engineer with experience building{" "}
                 <span className="font-semibold text-zinc-400">
