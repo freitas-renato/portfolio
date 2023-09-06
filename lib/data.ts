@@ -38,3 +38,21 @@ export const socials = [
         icon: React.createElement(HiMail)
     }
 ] as const;
+
+export const projects = [
+    {
+        name: 'Vibration Analyzer v2',
+        description: 'Human body vibration analyzer used for work safety measurements. Developed for a client.',
+        technologies: ['STM32', 'FreeRTOS', 'TouchGFX', 'C', 'C++'],
+    },
+    {
+        name: 'Air Sampling Pump',
+        description: 'Air sampling pump to measure exposure to harmful dust, particulates and gases, used for work safety.',
+        technologies: ['STM32', 'FreeRTOS', 'TouchGFX', 'C', 'C++', 'PID Control'],
+    },
+    {
+        name: 'Vibration Analyzer v1',
+        description: 'Human body vibration analyzer used for work safety measurements. Developed for a client.',
+        technologies: ['Embedded Linux', 'Qt', 'STM32', 'C', 'C++'],
+    },
+];
