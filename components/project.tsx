@@ -3,7 +3,7 @@ import Image from "next/image";
 
 function TechnologyPill({ name }: { name: string }) {
     return (
-        <div className="bg-teal-600 text-zinc-50 px-3 py-1 rounded-full border border-solid border-zinc-600 text-sm font-light">
+        <div className="bg-teal-400/30 text-teal-300 px-3 py-1 rounded-full text-sm">
             {name}
         </div>
     );
@@ -23,9 +23,9 @@ export default function Project({
     image,
 }: ProjectProps) {
     return (
-        <div className="group grid grid-cols-12 gap-4 h-full w-full items-center justify-center rounded-lg border border-zinc-600/30 hover:bg-zinc-700/30 transition-all hover:cursor-pointer hover:scale-105">
+        <div className="group grid grid-cols-12 gap-4 h-full w-full items-center justify-center rounded-lg border border-zinc-600/30 hover:bg-zinc-700/30 transition-all hover:cursor-pointer md:hover:scale-105">
             <div className="flex flex-col col-span-12 md:col-span-8 xl:col-span-7 p-6 justify-between h-full">
-                <div className="mb-10">
+                <div className="mb-10 2xl:mb-20">
                     <h3 className="text-2xl font-semibold mb-4">{name}</h3>
                     <p className="text-zinc-400">{description}</p>
                 </div>
@@ -41,7 +41,7 @@ export default function Project({
                         src={image}
                         alt={name}
                         fill={true}
-                        className="object-cover border border-solid border-zinc-600 rounded-b-lg md:rounded-xl brightness-95 group-hover:brightness-100 transition-all group-hover:drop-shadow-lg group-hover:shadow-zinc-500"
+                        className="object-cover border border-solid border-zinc-600 rounded-b-lg md:rounded-xl brightness-95 md:group-hover:brightness-100 transition-all md:group-hover:drop-shadow-lg md:group-hover:shadow-zinc-500"
                     />
                 ) : (
                     <div className="rounded-b-lg md:rounded-lg overflow-clip h-full w-full bg-zinc-700" />

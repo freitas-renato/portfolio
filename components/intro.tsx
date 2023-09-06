@@ -68,6 +68,7 @@ export default function Intro() {
             <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5, duration: 0.5 }}
             >
                 <p className="text-3xl font-medium text-gray-300">
                     Hey 👋 I&apos;m
@@ -86,7 +87,7 @@ export default function Intro() {
                 className="flex items-center justify-start mt-10 gap-4"
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.1 }}
+                transition={{ delay: 0.8, duration: 0.5 }}
             >
                 {socials.map((social) => (
                     <a
@@ -101,7 +102,7 @@ export default function Intro() {
 
                 {/* ToDo: Add resume link */}
                 <a href="#" className="group flex items-center gap-4 rounded-full bg-gradient-to-br from-teal-500 to-teal-800 px-6 py-2 text-zinc-200 text-base transition-all hover:font-semibold hover:scale-110 active:scale-105">
-                    Resume <HiDownload className="opacity-70 group-hover:animate-bounce transition-all"/>
+                    Résumé <HiDownload className="opacity-70 group-hover:animate-bounce transition-all"/>
                 </a>
             </motion.div>
         </section>
