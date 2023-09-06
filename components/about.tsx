@@ -40,7 +40,8 @@ export default function About() {
                 environment. Excited to continue growing and building cool
                 projects.
             </p>
-            <Link href="/about" className="flex items-center gap-3 group text-teal-400 font-semibold underline py-2">Read More <BsArrowRight className="group-hover:translate-x-2 transition-all"/></Link>
+            
+            <Link href="/about" className="flex max-w-fit items-center gap-3 group text-teal-400 font-semibold underline py-2">Read More <BsArrowRight className="group-hover:translate-x-2 transition-all"/></Link>
         </motion.section>
     );
 }
