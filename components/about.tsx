@@ -11,7 +11,7 @@ export default function About() {
 
     return (
         <motion.section 
-            className="flex flex-col mb-40 w-full lg:w-[70%] md:leading-8"
+            className="flex flex-col mb-96 w-full lg:w-[70%] md:leading-8"
             initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0, transition: { duration: 0.8 } }}
             viewport={{ once: true, amount: 0.3}}
