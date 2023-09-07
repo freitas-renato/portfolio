@@ -3,10 +3,13 @@
 import Project from "@/components/project";
 import { projects } from "@/lib/data";
 import { motion } from "framer-motion";
-import { useActiveSectionInView } from "@/lib/hooks";
+import { useActiveSectionInView, useInViewThreshold } from "@/lib/hooks";
+
 
 export default function Projects() {
-    const { ref: sectionRef } = useActiveSectionInView("Projects");
+    const threshold = useInViewThreshold(0.7, 0.2);
+    const { ref: sectionRef } = useActiveSectionInView("Projects", threshold);
+
     return (
         <motion.section
             id="projects"

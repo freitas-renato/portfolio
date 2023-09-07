@@ -5,18 +5,15 @@ import { BsArrowRight } from "react-icons/bs";
 import { HiMiniArrowUpRight } from "react-icons/hi2";
 import { motion } from "framer-motion";
 
-import { useInView } from 'react-intersection-observer';
-import { useActiveSectionContext } from "@/context/active-section-context";
-import { useEffect } from "react";
-
-import { useActiveSectionInView } from "@/lib/hooks";
+import { useActiveSectionInView, useInViewThreshold } from "@/lib/hooks";
 
 function textEmphasis(text: string) {
     return <span className="text-zinc-100 font-bold">{text}</span>;
 }
 
 export default function About() {
-    const { ref } = useActiveSectionInView("About");
+    const threshold = useInViewThreshold(0.7, 0.3);
+    const { ref } = useActiveSectionInView("About", threshold);
 
     return (
         <motion.section
