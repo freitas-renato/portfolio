@@ -54,7 +54,6 @@ export default function Intro() {
         const interval = setInterval(() => {
             if (pause > 0) {
                 setPause((prev) => prev - 1);
-                console.log("pause: ", pause);
                 return;
             }
             direction === "forward" ? type() : backspace();
@@ -64,7 +63,7 @@ export default function Intro() {
     }, [expertise, expertiseIndex, direction, pause]);
 
     return (
-        <section className="flex flex-col justify-center min-h-screen w-full lg:w-[70%]">
+        <section id="home" className="flex flex-col justify-center min-h-screen w-full lg:w-[70%]">
             <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}

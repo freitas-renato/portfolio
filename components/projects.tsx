@@ -7,7 +7,8 @@ import {motion} from "framer-motion";
 export default function Projects() {
     return (
         <motion.section 
-            className="flex flex-col mb-40 w-full lg:w-[70%]"
+            id="projects"
+            className="flex flex-col mb-40 w-full lg:w-[70%] scroll-mt-32"
             initial={{ opacity: 0, y: 80 }}
             whileInView={{ opacity: 1, y: 0, transition: { duration: 1 } }}
             viewport={{ once: true, amount: 0.1}}

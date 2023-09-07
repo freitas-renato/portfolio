@@ -1,42 +1,67 @@
 "use client";
 
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import { links } from "@/lib/data";
 import Link from "next/link";
 
-type NavLinkProps = {
-    children: React.ReactNode;
-};
-
-function NavLink({ children }: NavLinkProps) {
-    return (
-        <li className="text-base sm:text-lg font-medium cursor-pointer text-zinc-400 hover:text-zinc-200 rounded-full px-3 sm:px-6 py-1 xl:py-2 transition-all">
-            {children}
-        </li>
-    );
-}
-
 export default function Header() {
+    const [activeSection, setActiveSection] = useState("Home");
+
     return (
         <header className="z-[999] relative">
             <motion.div
-                className="fixed top-3 sm:top-6 left-[50%] -translate-x-[50%] z-[999] flex min-h-3 w-auto px-2 md:px-8 py-2 rounded-full bg-gradient-to-t from-zinc-900/80 to-zinc-700/80 items-center justify-center backdrop-blur-lg"
-                initial={{ y: -100, x: "-50%", opacity: 0 }}
-                animate={{ y: 0, x: "-50%", opacity: 1 }}
-                transition={{ duration: 0.7 }}
-            >
-                <nav>
-                    <ul className="flex items-center justify-center">
-                        {links.map(link => (
-                            <li key={link.hash} className="text-base sm:text-lg font-medium cursor-pointer text-zinc-400 hover:text-zinc-200 rounded-full px-3 sm:px-6 py-1 xl:py-2 transition-all">
-                                <Link href={link.hash} >
-                                    {link.name}
-                                </Link>
-                            </li>
-                        )) }
-                    </ul>
-                </nav>
-            </motion.div>
+                className="fixed inset-0 w-screen h-16 sm:h-24 bg-opacity-20 backdrop-blur-md"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+            />
+
+            <nav className="fixed top-3 sm:top-6 left-[50%] -translate-x-[50%] z-[999] rounded-full">
+                <ul className="flex items-center justify-center">
+                    {links.map((link) => (
+                        <motion.li
+                            key={link.hash}
+                            className={`flex items-center text-base sm:text-lg cursor-pointer hover:text-zinc-200 rounded-full p-1 transition-all ${
+                                activeSection === link.name
+                                    ? "text-zinc-100 font-semibold"
+                                    : "text-zinc-400 font-medium"
+                            }`}
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{
+                                duration: 1,
+                                ease: "easeOut",
+                                delay: 1,
+                                type: "tween",
+                            }}
+                        >
+                            <Link
+                                href={link.hash}
+                                onClick={() => {
+                                    setActiveSection(link.name);
+                                }}
+                                className="relative w-full px-2 sm:px-5 py-1 "
+                            >
+                                {link.name}
+                                {activeSection === link.name ? (
+                                    <motion.span
+                                        layout="position"
+                                        id="activeSection"
+                                        className="absolute inset-0 rounded-full w-full h-full -z-10 bg-white/10"
+                                        layoutId="activeSection"
+                                        transition={{
+                                            type: "spring",
+                                            damping: 25,
+                                            stiffness: 500,
+                                        }}
+                                    />
+                                ) : null}
+                            </Link>
+                        </motion.li>
+                    ))}
+                </ul>
+            </nav>
         </header>
     );
 }
