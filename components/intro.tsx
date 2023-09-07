@@ -11,6 +11,8 @@ import Link from "next/link";
 
 import { socials } from "@/lib/data";
 
+import { useActiveSectionInView } from "@/lib/hooks";
+
 const expertiseList = [
     "Embedded Systems.",
     "Web Applications.",
@@ -25,6 +27,8 @@ export default function Intro() {
         "backward"
     );
     const [pause, setPause] = useState(0);
+
+    const { ref: sectionRef } = useActiveSectionInView("Home");
 
     useEffect(() => {
         const backspace = () => {
@@ -63,7 +67,7 @@ export default function Intro() {
     }, [expertise, expertiseIndex, direction, pause]);
 
     return (
-        <section id="home" className="flex flex-col justify-center min-h-screen w-full lg:w-[70%]">
+        <section id="home" ref={sectionRef} className="flex flex-col justify-center min-h-screen w-full lg:w-[70%]">
             <motion.div
                 initial={{ opacity: 0, y: 100 }}
                 animate={{ opacity: 1, y: 0 }}

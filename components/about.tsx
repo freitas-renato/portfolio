@@ -5,13 +5,22 @@ import { BsArrowRight } from "react-icons/bs";
 import { HiMiniArrowUpRight } from "react-icons/hi2";
 import { motion } from "framer-motion";
 
+import { useInView } from 'react-intersection-observer';
+import { useActiveSectionContext } from "@/context/active-section-context";
+import { useEffect } from "react";
+
+import { useActiveSectionInView } from "@/lib/hooks";
+
+function textEmphasis(text: string) {
+    return <span className="text-zinc-100 font-bold">{text}</span>;
+}
+
 export default function About() {
-    function textEmphasis(text: string) {
-        return <span className="text-zinc-100 font-bold">{text}</span>;
-    }
+    const { ref } = useActiveSectionInView("About");
 
     return (
         <motion.section
+            ref={ref}
             id="about"
             className="flex flex-col mb-20 lg:mb-44 w-full lg:w-[70%] md:leading-8 scroll-mt-48"
             initial={{ opacity: 0, y: 100 }}
