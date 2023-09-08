@@ -9,14 +9,8 @@ export default function Home() {
         <main className="flex min-h-screen flex-col items-center justify-between px-10 md:px-22 xl:px-24">
             <Intro />
             <About />
-
             <Projects />
-
             <Experience />
-
-            <div className="w-full h-44 bg-zinc-900 opacity-50 mt-44 rounded-t-lg">
-
-            </div>
         </main>
     );
 }
