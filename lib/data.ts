@@ -59,3 +59,30 @@ export const projects = [
         image: 'https://instrutherm.com.br/media/catalog/product/cache/1fff4d188f64e200d7e2f24d317b822f/m/e/medidor-de-vibracao_4_.jpg'
     },
 ];
+
+export const experiences = [
+    {
+        title: "Embedded Software Engineer",
+        company: "PullUp",
+        url: "https://pullup.com.br/",
+        city: "São Paulo, Brazil",
+        date: "2019 — 2023",
+        description: "Developed robust embedded software for a variety of projects for clients in the medical, human safety, mining, and infrastructure industries. Worked alongside Hardware Engineers to develop and test new products from concept to production."
+    },
+    {
+        title: "ThundeRatz Robotis Team",
+        company: "USP",
+        url: "https://github.com/thunderatz/",
+        city: "São Paulo, Brazil",
+        date: "2017 — 2020",
+        description: "Developed embedded software for autonomous robots to compete in various competitions, including Robogames (CA, U.S.) and WinterChallenge (Brazil). Software and Firmware Team Leader during 2019, responsible for new member recruiting and maintainer of the team's internal servers."
+    },
+    {
+        title: "BSc Electrical and Computer Engineering",
+        company: "University of São Paulo",
+        url: "https://www5.usp.br/",
+        city: "São Paulo, Brazil",
+        date: "2016 — 2021",
+        description: "Bachelor of Science in Electrical and Computer Engineering, with a focus on Embedded Systems and Robotics."
+    }
+];
