@@ -104,8 +104,8 @@ export default function Intro() {
                 ))}
 
                 {/* ToDo: Add resume link */}
-                <a href="#" className="group flex items-center gap-4 rounded-full bg-gradient-to-br from-teal-500 to-teal-800 px-6 py-2 text-zinc-200 text-base transition-all hover:font-semibold hover:scale-110 active:scale-105">
-                    Résumé <HiDownload className="opacity-70 group-hover:animate-bounce transition-all"/>
+                <a target="_blank" href="/RenatoFreitas_resume.pdf" className="group flex items-center gap-4 rounded-full bg-gradient-to-br from-teal-500 to-teal-800 px-6 py-2 text-zinc-200 text-base transition-all hover:font-semibold hover:scale-110 active:scale-105">
+                    Resume <HiDownload className="opacity-70 group-hover:animate-bounce transition-all"/>
                 </a>
             </motion.div>
         </section>
