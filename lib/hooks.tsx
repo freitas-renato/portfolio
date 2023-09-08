@@ -16,7 +16,6 @@ export function useActiveSectionInView(
 
     useEffect(() => {
         if (inView) {
-            console.log(entry);
             setActiveSection(sectionName);
         }
     }, [inView, entry, setActiveSection, sectionName]);
