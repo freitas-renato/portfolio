@@ -20,7 +20,7 @@ export default function Experience() {
     return (
         <section
             id="experience"
-            className="flex flex-col mb-20 lg:mb-44 w-full lg:w-[70%] md:leading-8 scroll-mt-48"
+            className="flex flex-col mb-20 lg:mb-32 w-full lg:w-[70%] md:leading-8 scroll-mt-48"
         >
             <h2 ref={ref} className="text-4xl font-bold text-zinc-100">
                 Experience
