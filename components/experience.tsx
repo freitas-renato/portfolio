@@ -62,17 +62,17 @@ export default function Experience() {
                                 }}
                                 icon=""
                             >
-                                <h3 className="text-2xl font-semibold mb-4 group hover:underline hover:cursor-pointer">
+                                <a
+                                    target="_blank"
+                                    href={experience.url}
+                                    className="text-2xl font-semibold mb-4 group hover:cursor-pointer"
+                                >
                                     {experience.title} ·{" "}
-                                    <a
-                                        target="_blank"
-                                        href={experience.url}
-                                        className="text-zinc-300 inline-block"
-                                    >
+                                    <span className="text-zinc-300 inline-block">
                                         {experience.company}
                                         <HiMiniArrowUpRight className="inline-block transition-all group-hover:translate-x-1 group-hover:-translate-y-1" />
-                                    </a>
-                                </h3>
+                                    </span>
+                                </a>
                                 <h4 className="vertical-timeline-element-subtitle text-zinc-500 font-semibold -mt-10">
                                     {experience.city}
                                 </h4>

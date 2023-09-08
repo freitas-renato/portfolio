@@ -70,12 +70,12 @@ export const experiences = [
         description: "Developed robust embedded software for a variety of projects for clients in the medical, human safety, mining, and infrastructure industries. Worked alongside Hardware Engineers to develop and test new products from concept to production."
     },
     {
-        title: "ThundeRatz Robotis Team",
+        title: "ThundeRatz Robotics Team",
         company: "USP",
         url: "https://github.com/thunderatz/",
         city: "São Paulo, Brazil",
         date: "2017 — 2020",
-        description: "Developed embedded software for autonomous robots to compete in various competitions, including Robogames (CA, U.S.) and WinterChallenge (Brazil). Software and Firmware Team Leader during 2019, responsible for new member recruiting and maintainer of the team's internal servers."
+        description: "Developed embedded software for autonomous robots to compete in various competitions, including Robogames (CA, USA) and Robocore Experience (Brazil). Software and Firmware Team Leader during 2019, responsible for new member recruiting and maintainer of the team's internal servers."
     },
     {
         title: "BSc Electrical and Computer Engineering",
@@ -83,6 +83,6 @@ export const experiences = [
         url: "https://www5.usp.br/",
         city: "São Paulo, Brazil",
         date: "2016 — 2021",
-        description: "Bachelor of Science in Electrical and Computer Engineering, with a focus on Embedded Systems and Robotics."
+        description: "Bachelor of Science in Electrical and Computer Engineering, with a focus on Embedded Systems, IoT, and Robotics."
     }
 ];
