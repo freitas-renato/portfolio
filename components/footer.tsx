@@ -12,7 +12,7 @@ function link(text: string, href: string) {
 
 export default function Footer() {
     return (
-        <footer className="flex flex-col items-center gap-4 justify-center w-full h-32 border-t border-zinc-800">
+        <footer className="flex flex-col items-center text-center gap-4 justify-center w-full h-32 border-t border-zinc-800 px-4">
             <p className="text-zinc-500 text-sm font-medium">
                 Designed & Built by Renato Freitas
             </p>
