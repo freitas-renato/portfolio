@@ -60,7 +60,6 @@ export default function Experience() {
                                     boxShadow: "none",
                                     border: "5px solid #0d9488",
                                 }}
-                                icon=""
                             >
                                 <a
                                     target="_blank"

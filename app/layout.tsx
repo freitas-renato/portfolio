@@ -21,7 +21,7 @@ export default function RootLayout({
     return (
         <html lang="en" className="!scroll-smooth">
             <body
-                className={`${inter.className} text-zinc-100 bg-zinc-950 relative`}
+                className={`${inter.className} text-zinc-100 bg-zinc-950 relative flex flex-col min-h-screen`}
             >
                 <ActiveSectionContextProvider>
                     <Header />
