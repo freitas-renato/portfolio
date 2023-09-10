@@ -35,6 +35,7 @@ export async function getProjectBySlug(slug: string): Promise<Project | undefine
             }
         }
     });
+    frontmatter.slug = slug;
 
     const project: Project = {
         metadata: frontmatter,

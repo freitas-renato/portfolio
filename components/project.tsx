@@ -1,5 +1,6 @@
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
+import Link from "next/link";
 
 function Pill({ name }: { name: string }) {
     return (
@@ -14,6 +15,7 @@ type ProjectProps = {
     description: string;
     tools: string[];
     image?: string | StaticImport;
+    slug: string;
 };
 
 export default function Project({
@@ -21,9 +23,14 @@ export default function Project({
     description,
     tools,
     image,
+    slug
 }: ProjectProps) {
     return (
-        <div className="group grid h-full w-full grid-cols-12 items-center justify-center gap-4 rounded-lg border border-zinc-600/30 transition-all hover:cursor-pointer hover:bg-zinc-700/30 md:hover:scale-105">
+        <Link 
+            className="group grid h-full w-full grid-cols-12 items-center justify-center gap-4 rounded-lg border border-zinc-600/30 transition-all hover:cursor-pointer hover:bg-zinc-700/30 md:hover:scale-105"
+            href={`/projects/${slug}`}
+        >
+
             <div className="col-span-12 flex h-full flex-col justify-between p-6 md:col-span-8 xl:col-span-7">
                 <div className="mb-10 2xl:mb-20">
                     <h3 className="mb-4 text-2xl font-semibold">{name}</h3>
@@ -47,6 +54,6 @@ export default function Project({
                     <div className="h-full w-full overflow-clip rounded-b-lg bg-zinc-700 md:rounded-lg" />
                 )}
             </div>
-        </div>
+        </Link>
     );
 }

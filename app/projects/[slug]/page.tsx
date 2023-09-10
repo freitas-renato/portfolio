@@ -18,7 +18,7 @@ export default async function ProjectPage({ params }: Props) {
     if (!project) notFound();
 
     return (
-        <div className="flex-1 flex h-full w-full flex-col items-center md:col-span-11">
+        <div className="flex h-full w-full flex-1 scroll-mt-60 flex-col items-center md:col-span-11">
             <article className="prose lg:prose-xl prose-p:w-full prose-zinc prose-invert text-zinc-400">
                 {project.content}
             </article>
