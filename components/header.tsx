@@ -38,7 +38,7 @@ export default function Header() {
                             }}
                         >
                             <Link
-                                href={link.hash}
+                                href={`/${link.hash}`}
                                 onClick={() => {
                                     setActiveSection(link.name);
                                 }}
