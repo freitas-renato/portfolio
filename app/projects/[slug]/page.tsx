@@ -1,4 +1,4 @@
-import { getAvailableProjects, getProjectBySlug } from "@/lib/content";
+import { getAvailableProjects, getProjectBySlug, getAllProjectsMetadata } from "@/lib/content";
 import { notFound } from "next/navigation";
 
 type Props = {
@@ -7,13 +7,32 @@ type Props = {
     };
 };
 
+export async function generateStaticParams() {
+    const projects = await getAllProjectsMetadata();
+    
+    if (!projects) return [];
+
+    return projects.map((project) => ({
+        params: {
+            slug: project.slug
+        }
+    }));
+}
+
+export async function generateMetadata({ params }: Props) {
+    const project = await getProjectBySlug(params.slug);
+    if (!project) {
+        return {
+            title: 'Project not found',
+        }
+    }
+
+    return {
+        title: `${project.metadata.name} | Renato Freitas`,
+    }
+}
+
 export default async function ProjectPage({ params }: Props) {
-    const projects = getAvailableProjects();
-    console.log(projects);
-
-    // Check if the project exists
-    if (!projects.find((project) => project === params.slug)) notFound();
-
     const project = await getProjectBySlug(params.slug);
     if (!project) notFound();
 
