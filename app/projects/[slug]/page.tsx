@@ -1,5 +1,10 @@
-import { getAvailableProjects, getProjectBySlug, getAllProjectsMetadata } from "@/lib/content";
+import {
+    getAvailableProjects,
+    getProjectBySlug,
+    getAllProjectsMetadata,
+} from "@/lib/content";
 import { notFound } from "next/navigation";
+import Pill from "@/components/pill";
 
 type Props = {
     params: {
@@ -9,13 +14,13 @@ type Props = {
 
 export async function generateStaticParams() {
     const projects = await getAllProjectsMetadata();
-    
+
     if (!projects) return [];
 
     return projects.map((project) => ({
         params: {
-            slug: project.slug
-        }
+            slug: project.slug,
+        },
     }));
 }
 
@@ -23,13 +28,13 @@ export async function generateMetadata({ params }: Props) {
     const project = await getProjectBySlug(params.slug);
     if (!project) {
         return {
-            title: 'Project not found',
-        }
+            title: "Project not found",
+        };
     }
 
     return {
         title: `${project.metadata.name} | Renato Freitas`,
-    }
+    };
 }
 
 export default async function ProjectPage({ params }: Props) {
@@ -40,6 +45,12 @@ export default async function ProjectPage({ params }: Props) {
         <div className="flex h-full w-full flex-1 scroll-mt-60 flex-col items-center md:col-span-11">
             <article className="prose lg:prose-xl prose-p:w-full prose-zinc prose-invert text-zinc-400">
                 {project.content}
+                <h4>Built with</h4>
+                <div className="flex w-full flex-wrap gap-2">
+                    {project.metadata.tools.map((tool) => (
+                        <Pill key={tool} name={tool} />
+                    ))}
+                </div>
             </article>
         </div>
     );
