@@ -6,13 +6,22 @@ import Experience from "@/components/experience";
 import Contact from "@/components/contact";
 import SectionDivider from "@/components/section-divider";
 
-export default function Home() {
+import { getAllProjectsMetadata } from "@/lib/content";
+import Project from "@/components/project";
+
+export default async function Home() {
+    const projects = await getAllProjectsMetadata();
+
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between px-10 md:px-22 xl:px-24">
+        <main className="md:px-22 flex min-h-screen flex-col items-center justify-between px-10 xl:px-24">
             <Header />
             <Intro />
             <About />
-            <Projects />
+            <Projects>
+                {projects?.map((project) => (
+                    <Project key={project.name} {...project} />
+                ))}
+            </Projects>
             <Experience />
             <Contact />
         </main>
