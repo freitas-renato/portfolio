@@ -12,20 +12,14 @@ export default async function ProjectPage({ params }: Props) {
     console.log(projects);
 
     // Check if the project exists
-    if (!projects.find((project) => project === params.slug))
-        notFound();
+    if (!projects.find((project) => project === params.slug)) notFound();
 
     const project = await getProjectBySlug(params.slug);
-    if (!project) 
-        notFound();
+    if (!project) notFound();
 
     return (
-        <div className="col-span-12 flex h-full w-full flex-col md:col-span-8">
-            <h1 className="mb-10 text-5xl font-semibold">
-                {project.metadata.name}
-            </h1>
-
-            <article className="text-md text-justify leading-relaxed text-zinc-300">
+        <div className="flex-1 flex h-full w-full flex-col items-center md:col-span-11">
+            <article className="prose lg:prose-xl prose-p:w-full prose-zinc prose-invert text-zinc-400">
                 {project.content}
             </article>
         </div>

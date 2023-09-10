@@ -30,6 +30,9 @@ export async function getProjectBySlug(slug: string): Promise<Project | undefine
         source: rawMDX,
         options: {
             parseFrontmatter: true,
+            mdxOptions: {
+                format: 'mdx',
+            }
         }
     });
 

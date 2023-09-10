@@ -5,13 +5,11 @@ image: https://instrutherm.com.br/media/catalog/product/cache/1fff4d188f64e200d7
 description: Human body vibration analyzer used for work safety measurements. Developed for a client.
 ---
 
+# Human Body Vibration Analyzer v2
+
 Developed for a client, a human body vibration analyzer is an equipment that uses a 3-axis accelerometer to measure vibration intensity on workers for work safety purposes. This was the second iteration of a previous project, redesigned for stability and cost reduction. The first version was revised, changing hardware/firmware architecture and replacing key hardware components, which led to an **80% bill-of-materials cost reduction** and increased the client’s profit margins
 
-<br />
-
 The project consisted of a main PCB powered by an STM32F4xx microcontroller that collected high speed accelerometer data stream via SPI interface processed using various digital filters based on international standards (e.g., ISO, IEC). The board was battery powered, charged via USB, had an external flash storage, and also a 2.4-inch LCD display (RGB 656 interface) that allowed users to use an embedded GUI to configure measurements, view recorded data and manage equipment settings.
-
-<br />
 
 I helped to choose the main hardware components (microcontroller, flash, RAM, accelerometer, LCD), reviewed EE schematics and PCB board design on Altium, and developed the entire firmware using C and C++:
 

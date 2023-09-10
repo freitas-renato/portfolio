@@ -19,10 +19,10 @@ export default function ProjectLayout({ children }: Props) {
     }, [setActiveSection]);
 
     return (
-        <main className="px-22 mt-40 flex flex-col items-center justify-between px-10 xl:px-24">
+        <main className="px-22 mb-36 mt-40 flex flex-col items-center justify-between px-10 xl:px-24">
             <Header />
-            <div className="grid w-full grid-cols-12 lg:w-[80%] 2xl:w-[60%]">
-                <div className="col-span-12 mb-10 mr-10 flex max-h-12 w-full items-center md:col-span-2">
+            <div className="flex w-full flex-col md:flex-row lg:w-[80%] 2xl:w-[60%]">
+                <div className="mb-10 mr-10 flex max-h-12 w-5 flex-none items-center md:col-auto">
                     <button
                         onClick={() => router.back()}
                         className="inline-block text-xl font-semibold text-zinc-500 transition-all hover:text-teal-500 hover:underline"
