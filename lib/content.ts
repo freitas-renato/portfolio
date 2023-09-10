@@ -51,12 +51,21 @@ export async function getAllProjectsMetadata(): Promise<ProjectMetadata[]> {
     const projects: ProjectMetadata[] = [];
     
     for (const slug of availableProjects) {
-        const project = await getProjectBySlug(slug);
+        // Read the file
+        const rawMDX = fs.readFileSync(path.join(contentPath, `${slug}.mdx`), 'utf8');
 
-        if (!project)
-            continue;
+        const { frontmatter } = await compileMDX<ProjectMetadata>({
+            source: rawMDX,
+            options: {
+                parseFrontmatter: true,
+                mdxOptions: {
+                    format: 'mdx',
+                }
+            }
+        });
+        frontmatter.slug = slug;
 
-        projects.push(project.metadata);
+        projects.push(frontmatter);
     }
 
     return projects;
