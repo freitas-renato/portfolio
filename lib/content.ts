@@ -1,6 +1,8 @@
 import fs from 'fs';
 import path from 'path';
 import { compileMDX } from 'next-mdx-remote/rsc';
+import Carousel from '@/components/carousel';
+import CustomImage from '@/components/custom-image';
 
 const contentPath = path.join(process.cwd(), 'projects');
 
@@ -28,6 +30,10 @@ export async function getProjectBySlug(slug: string): Promise<Project | undefine
 
     const { frontmatter, content } = await compileMDX<ProjectMetadata>({
         source: rawMDX,
+        components: {
+            Carousel,
+            CustomImage,
+        },
         options: {
             parseFrontmatter: true,
             mdxOptions: {
