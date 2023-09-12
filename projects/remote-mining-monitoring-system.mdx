@@ -11,9 +11,9 @@ description: Bluetooth Mesh sensor network for remote monitoring of mining conve
 
 This project was developed for a world class mining equipment manufacturer that needed to monitor conveyor rollers responsible for transporting minerals through very long distances in a mining plant. The purpose of the system is to detect the need of predictive maintenance on the conveyor belts, which is done by measuring **vibration and temperature** on the rollers.
 
-### Technical Details 
+### Technical Details
 
-The system consists of a network of sensors that collect data from the conveyor belts and send it to a central gateway via **Bluetooth Mesh**. 
+The system consists of a network of sensors that collect data from the conveyor belts and send it to a central gateway via **Bluetooth Mesh**.
 
 The gateway is a local **Linux server** that receives the data and stores it in a **MySQL database**. It also hosts a **web dashboard** that displays the data in real time and allows users to check out historical datapoints.
 
@@ -21,12 +21,23 @@ This system is connected to the internal IT infrastructure of the client, which 
 
 My role in this project was to setup the whole Linux server infrastructure, including:
 
-* **Linux server** setup and configuration
-* **MySQL database** table schema setup and configuration
-* Develop services to collect data from the bluetooth mesh network and store it in the database, using multithreading and asynchronous programming in **Python**
-* Develop a **web dashboard** using **JavaScript** and **Grafana** to display the data in real time and allow users to check out historical datapoints with the appropriate *SQL queries*
-* Configure the local network to allow access to the dashboard from anywhere inside the client's network
+-   **Linux server** setup and configuration
+-   **MySQL database** table schema setup and configuration
+-   Develop services to collect data from the bluetooth mesh network and store it in the database, using multithreading and asynchronous programming in **Python**
+-   Develop a **web dashboard** using **JavaScript** and **Grafana** to display the data in real time and allow users to check out historical datapoints with the appropriate _SQL queries_
+-   Configure the local network to allow access to the dashboard from anywhere inside the client's network
 
 ### Results
 
 The system is currently deployed in a couple mining plants at remote areas in Brazil. It is a very successful project that has been running for more than two years now, with very little to no maintenance, besides the occasional battery replacement on the sensors.
+
+<Carousel>
+    <CustomImage
+        src="/assets/mining-dashboard-1.png"
+        alt="Monitoring system dashboard"
+    />
+    <CustomImage
+        src="/assets/mining-dashboard-2.png"
+        alt="Monitoring system dashboard"
+    />
+</Carousel>
