@@ -3,10 +3,9 @@ import path from 'path';
 import { compileMDX } from 'next-mdx-remote/rsc';
 import Carousel from '@/components/carousel';
 import CustomImage from '@/components/custom-image';
+import rehypeExternalLinks from 'rehype-external-links';
 
 const contentPath = path.join(process.cwd(), 'projects');
-
-
 
 export function getAvailableProjects(): string[] {
     try {
@@ -38,6 +37,12 @@ export async function getProjectBySlug(slug: string): Promise<Project | undefine
             parseFrontmatter: true,
             mdxOptions: {
                 format: 'mdx',
+                rehypePlugins: [
+                    [rehypeExternalLinks, {
+                        rel: ['nofollow'],
+                        target: '_blank',
+                    }]
+                ]
             }
         }
     });

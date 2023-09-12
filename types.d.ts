@@ -4,6 +4,7 @@ type ProjectMetadata = {
     tools: string[];
     image: string;
     description: string;
+    url?: string;
 };
 
 type Project = {
