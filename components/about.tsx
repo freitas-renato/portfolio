@@ -57,13 +57,13 @@ export default function About() {
                 projects.
             </p>
 
-            <Link
+            {/* <Link
                 href="/about"
                 className="flex max-w-fit items-center gap-3 group text-teal-400 font-semibold underline py-2"
             >
                 Read More{" "}
                 <BsArrowRight className="group-hover:translate-x-2 transition-all" />
-            </Link>
+            </Link> */}
         </motion.section>
     );
 }
