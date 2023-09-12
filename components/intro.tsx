@@ -9,6 +9,9 @@ import { motion } from "framer-motion";
 import { socials } from "@/lib/data";
 
 import { useActiveSectionInView } from "@/lib/hooks";
+import { useActiveSectionContext } from "@/context/active-section-context";
+
+import Link from "next/link";
 
 const expertiseList = [
     "Embedded Systems.",
@@ -26,6 +29,8 @@ export default function Intro() {
     const [pause, setPause] = useState(0);
 
     const { ref: sectionRef } = useActiveSectionInView("Home");
+
+    const { setActiveSection } = useActiveSectionContext();
 
     useEffect(() => {
         const backspace = () => {
@@ -121,9 +126,17 @@ export default function Intro() {
                 className="absolute bottom-32 left-[48%] -translate-x-[52%] transform animate-bounce md:bottom-40"
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 4, duration: 1 }}
+                transition={{ delay: 3, duration: 1 }}
             >
-                <BsArrowDown />
+                <Link
+                    href="#about"
+                    onClick={() => {
+                        setActiveSection("About");
+                    }}
+                    className="cursor-pointer"
+                >
+                    <BsArrowDown />
+                </Link>
             </motion.div>
         </section>
     );
