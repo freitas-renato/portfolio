@@ -1,0 +1,31 @@
+---
+name: Air Flow Sensor Desktop Dashboard
+tools: [C++, Qt, QML, CMake, USB]
+description: Desktop application to configure, calibrate and test air flow sensor via USB.
+image: "/assets/flow-sensor-dashboard-1.png"
+---
+
+# Air Flow Sensor Desktop Dashboard
+
+### Description
+
+Air flow sensor was developed for a medical equipment vendor, intended to replace a legacy air flow sensor that was used in their products — **medical lung respirators**. The new sensor was developed by my colleagues and needed a desktop application to configure, calibrate and test it before deployment inside the respirators.
+
+### Technical Details
+
+I was responsible for designing and building the entire application using the **Qt** framework, which allowed me to develop a cross-platform app that could run on Windows, Linux and MacOS. The application was developed in **C++** and **QML** and built using **CMake**. The design and prototype were done using _Invision Studio_, with constant feedback from the client.
+
+The application communicates with the sensor via **USB** and allows users to configure the sensor parameters, calibrate it and test it using a **real-time graph**. It communicates with the sensor using a custom serial protocol defined by the client, and collects data points at a rate of **1 kHz** (1000 samples per second).
+
+It is also capable of generating datalogs after each test, which are saved in a **CSV file** that can be used for further analysis.
+
+### Results
+
+The application was developed over the course of 6 months in 2021 and was successfully used to configure and test the sensor before deployment inside the respirators, as well as to perform tests during the development of the sensor.
+
+<Carousel>
+    <CustomImage
+        src="/assets/flow-sensor-dashboard-1.png"
+        alt="Desktop dashboard"
+    />
+</Carousel>
