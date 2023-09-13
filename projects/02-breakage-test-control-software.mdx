@@ -5,7 +5,7 @@ description: Desktop application to configure, calibrate and run a mining rock b
 image: "/assets/breakage-tester-software-2.png"
 ---
 
-# Rock Breakage Macnhine Desktop Software
+# Rock Breakage Machine Desktop Software
 
 ### Description
 
@@ -13,17 +13,17 @@ This project was developed for a mining startup as a user interface to control t
 
 ### Technical Details
 
-I was assigned to design and develop the entire GUI user interface using the **Qt** framework in **C++** and **QML**. This application is responsible for controlling the machine states, collecting data recieved from the main embedded board and displaying it in real time to the user, as well as saving it to log files for further analysis. It also allows users to configure the machine parameters and calibrate the various precision sensors based on proprietary algorithms.
+I was assigned to design and develop the entire user interface using the **Qt** framework in **C++** and **QML**. This application is responsible for controlling the machine states, collecting data recieved from the main embedded board and displaying it in real time to the user, as well as saving it to log files for further analysis. It also allows users to configure the machine parameters and calibrate the various precision sensors based on proprietary algorithms.
 
 #### Key Concepts
 
 * **Qt** framework, with **QML** for the frontend and **C++** for the backend
-* **Muiltithreaded** C++ application to handle both real time data display, serial communication and file I/O
+* **Muiltithreaded** C++ application to handle real-time data display, serial communication, and file I/O
 * **Custom serial protocol** to communicate with the embedded board, capable of collecting data as fast as 10 kHz
 
 #### Main Challenges
 
-The most challenging part of this project was to be able to maintain the high speed data collection via USB while also displaying the data in real time to the user without data loss. This was achieved by using a multithreaded application, where the main thread is responsible for displaying the data and has lower priority than the secondary thread, responsible for collecting the data from the serial port and sending it to the main thread via a **thread-safe queue**. Buffering techniques were also used to avoid data loss on the serial bus.
+The most challenging part of this project was maintaining high-speed data collection via USB while also displaying the data in real-time to the user without data loss. This was achieved by using a multithreaded application, where the main thread is responsible for displaying the data and has lower priority than the secondary thread, responsible for collecting the data from the serial port and sending it to the main thread via a **thread-safe queue**. Buffering techniques were also used to avoid data loss on the serial bus.
 
 ### Results
 

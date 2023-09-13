@@ -39,11 +39,11 @@ export default function About() {
                 </a>
             </p>
             <p className="text-lg text-zinc-400 py-3 text-justify ">
-                Most of my professional experience consisists of developing and
+                Most of my professional experience consists of developing and
                 maintaining software for a variety of embedded systems. Skilled
                 mainly in {textEmphasis("C and C++ programming")}, with a strong
                 understanding of microcontroller architectures, peripheral
-                interfaces and comunication protocols. I also have experience
+                interfaces and communication protocols. I also have experience
                 developing web applications in {textEmphasis("JavaScript")},
                 having worked on IoT projects that involved developing{" "}
                 {textEmphasis("web apps for data visualization")} and control,

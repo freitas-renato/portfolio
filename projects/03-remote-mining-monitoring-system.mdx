@@ -15,7 +15,7 @@ This project was developed for a world class mining equipment manufacturer that 
 
 The system consists of a network of sensors that collect data from the conveyor belts and send it to a central gateway via **Bluetooth Mesh**.
 
-The gateway is a local **Linux server** that receives the data and stores it in a **MySQL database**. It also hosts a **web dashboard** that displays the data in real time and allows users to check out historical datapoints.
+The gateway is a local **Linux server** that receives the data and stores it in a **MySQL database**. It also hosts a **web dashboard** that displays the data in real time and allows users to check out historical data points.
 
 This system is connected to the internal IT infrastructure of the client, which allows them to access the dashboard from anywhere inside their network, providing the needed security for the application. Each network has its own gateway and sensors, making it a unique system for each mining plant.
 
@@ -23,7 +23,7 @@ My role in this project was to setup the whole Linux server infrastructure, incl
 
 -   **Linux server** setup and configuration
 -   **MySQL database** table schema setup and configuration
--   Develop services to collect data from the bluetooth mesh network and store it in the database, using multithreading and asynchronous programming in **Python**
+-   Develop services to collect data from the Bluetooth mesh network and store it in the database, using multithreading and asynchronous programming in **Python**
 -   Develop a **web dashboard** using **JavaScript** and **Grafana** to display the data in real time and allow users to check out historical datapoints with the appropriate _SQL queries_
 -   Configure the local network to allow access to the dashboard from anywhere inside the client's network
 

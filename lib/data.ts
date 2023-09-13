@@ -39,27 +39,6 @@ export const socials = [
     }
 ] as const;
 
-export const projects = [
-    {
-        name: 'Vibration Analyzer v2',
-        description: 'Human body vibration analyzer used for work safety measurements. Developed for a client.',
-        technologies: ['STM32', 'FreeRTOS', 'TouchGFX', 'C', 'C++'],
-        image: 'https://instrutherm.com.br/media/catalog/product/cache/1fff4d188f64e200d7e2f24d317b822f/m/e/medidor-de-vibracao_4__1.jpg'
-    },
-    {
-        name: 'Air Sampling Pump',
-        description: 'Air sampling pump to measure exposure to harmful dust, particulates and gases, used for work safety.',
-        technologies: ['STM32', 'FreeRTOS', 'TouchGFX', 'C', 'C++', 'PID Control'],
-        image: 'https://instrutherm.com.br/media/catalog/product/cache/1fff4d188f64e200d7e2f24d317b822f/b/o/bomba-de-amostragrem_2_.jpg'
-    },
-    {
-        name: 'Vibration Analyzer v1',
-        description: 'Human body vibration analyzer used for work safety measurements. Developed for a client.',
-        technologies: ['Embedded Linux', 'Qt', 'STM32', 'C', 'C++'],
-        image: 'https://instrutherm.com.br/media/catalog/product/cache/1fff4d188f64e200d7e2f24d317b822f/m/e/medidor-de-vibracao_4_.jpg'
-    },
-];
-
 export const experiences = [
     {
         title: "Embedded Software Engineer",
@@ -80,7 +59,7 @@ export const experiences = [
     {
         title: "BSc Electrical and Computer Engineering",
         company: "University of São Paulo",
-        url: "https://www5.usp.br/",
+        url: "https://en.wikipedia.org/wiki/University_of_S%C3%A3o_Paulo",
         city: "São Paulo, Brazil",
         date: "2016 — 2021",
         description: "Bachelor of Science in Electrical and Computer Engineering, with a focus on Embedded Systems, IoT, and Robotics."
