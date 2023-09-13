@@ -10,6 +10,10 @@ export const metadata: Metadata = {
     title: "Renato | Personal Portfolio",
     description:
         "Renato is a Software Engineer with experience with Embedded Systems and Web Development",
+    openGraph: {
+        images: "/og-image.png",
+    },
+    metadataBase: new URL(process.env.METADATA_BASE_URL || ""),
 };
 
 export default function RootLayout({
