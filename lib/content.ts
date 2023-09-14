@@ -163,8 +163,11 @@ export async function getRemoteImage(path: string): Promise<string> {
         headers: {
             "X-GitHub-Api-Version": "2022-11-28",
             Authorization: "Bearer " + process.env.CONTENT_API_TOKEN,
+            Accept: "application/vnd.github+json",
         },
-        cache: "no-store"
+        next: {
+            revalidate: 60,
+        }
     });
 
     if (!res.ok) {
@@ -173,5 +176,5 @@ export async function getRemoteImage(path: string): Promise<string> {
 
     const data = await res.json();
 
-    return data.download_url;
+    return data.content;
 }

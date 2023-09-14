@@ -20,7 +20,8 @@ export default async function Project({
     slug
 }: ProjectProps) {
     if (image && typeof image === "string" && image.startsWith("/")) {
-        image = await getRemoteImage(image);
+        const content = await getRemoteImage(image);
+        image = `data:image/png;base64,${content}`
     }
 
     return (
