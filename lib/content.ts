@@ -16,6 +16,9 @@ export async function getAvailableProjects(): Promise<string[]> {
             "X-GitHub-Api-Version": "2022-11-28",
             Authorization: "Bearer " + process.env.CONTENT_API_TOKEN,
         },
+        next: {
+            revalidate: 60,
+        }
     });
 
     if (!res.ok) {
@@ -145,4 +148,30 @@ export async function getAllProjectsMetadata(): Promise<ProjectMetadata[]> {
     }
 
     return projects;
+}
+
+export async function getRemoteImage(path: string): Promise<string> {
+    if (!process.env.CONTENT_API_URL) {
+        throw new Error("CONTENT_API_URL is not set");
+    }
+
+    const api_url = new URL(
+        process.env.CONTENT_API_URL + "/projects" + path || "",
+    );
+
+    const res = await fetch(api_url, {
+        headers: {
+            "X-GitHub-Api-Version": "2022-11-28",
+            Authorization: "Bearer " + process.env.CONTENT_API_TOKEN,
+        },
+        cache: "no-store"
+    });
+
+    if (!res.ok) {
+        throw new Error(`Error fetching image ${path}: ${res.statusText}`);
+    }
+
+    const data = await res.json();
+
+    return data.download_url;
 }

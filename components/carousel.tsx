@@ -9,7 +9,6 @@ type Props = {
 };
 
 export default function Carousel({ children }: Props) {
-    const slides = Children.toArray(children);
     const containerRef = useRef<HTMLDivElement | never>(null);
 
     const simulateKeyPress = (keyCode: number) => {
@@ -65,14 +64,7 @@ export default function Carousel({ children }: Props) {
                         ref={containerRef}
                         className="no-scrollbar z-[10] flex snap-x snap-mandatory overflow-x-scroll"
                     >
-                        {slides.map((slide, i) => (
-                            <div
-                                key={i}
-                                className="flex h-[420px] w-full flex-none snap-center flex-col items-center justify-center bg-transparent"
-                            >
-                                {slide}
-                            </div>
-                        ))}
+                        {children}
                     </div>
                 </div>
             </div>

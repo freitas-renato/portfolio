@@ -2,6 +2,7 @@ import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import Link from "next/link";
 import Pill from "@/components/pill";
+import { getRemoteImage } from "@/lib/content";
 
 type ProjectProps = {
     name: string;
@@ -11,13 +12,17 @@ type ProjectProps = {
     slug: string;
 };
 
-export default function Project({
+export default async function Project({
     name,
     description,
     tools,
     image,
     slug
 }: ProjectProps) {
+    if (image && typeof image === "string" && image.startsWith("/")) {
+        image = await getRemoteImage(image);
+    }
+
     return (
         <Link 
             className="group grid h-full w-full grid-cols-12 items-center justify-center gap-4 rounded-lg border border-zinc-600/30 transition-all hover:cursor-pointer hover:bg-zinc-700/30 md:hover:scale-105"
