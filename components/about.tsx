@@ -27,7 +27,7 @@ export default function About() {
             <h2 className="text-4xl font-bold py-10">About Me</h2>
             <p className="text-lg text-zinc-400 py-3 text-justify ">
                 I&apos;m a Software Engineer born in Brazil, and currently
-                living in {textEmphasis("New York City")}. I have a bachelors
+                living in {textEmphasis("New York City")}. I have a bachelor&apos;s
                 degree in {textEmphasis("Electrical and Computer Engineeing")}{" "}
                 from the{" "}
                 <a
