@@ -8,7 +8,8 @@ export async function getAvailableProjects(): Promise<string[]> {
         throw new Error("CONTENT_API_URL is not set");
     }
 
-    const api_url = new URL(process.env.CONTENT_API_URL + "/projects" || "");
+    const content_branch = process.env.NODE_ENV === "development" ? "?ref=develop" : "";
+    const api_url = new URL( `${process.env.CONTENT_API_URL}/projects${content_branch}` || "");
 
     const res = await fetch(api_url, {
         headers: {
@@ -44,7 +45,7 @@ export async function getProjectBySlug(
     }
 
     const api_url = new URL(
-        process.env.CONTENT_RAW_URL + "/projects/" + slug + ".mdx" || "",
+        `${process.env.CONTENT_RAW_URL}/projects/${slug}.mdx` || "",
     );
 
     const res = await fetch(api_url, {
@@ -102,7 +103,7 @@ export async function getProjectMetadataBySlug(
     }
 
     const api_url = new URL(
-        process.env.CONTENT_RAW_URL + "/projects/" + slug + ".mdx" || "",
+        `${process.env.CONTENT_RAW_URL}/projects/${slug}.mdx` || "",
     );
 
     const res = await fetch(api_url, {
@@ -154,9 +155,10 @@ export async function getRemoteImage(path: string): Promise<string> {
     if (!process.env.CONTENT_API_URL) {
         throw new Error("CONTENT_API_URL is not set");
     }
-
+    
+    const content_branch = process.env.NODE_ENV === "development" ? "?ref=develop" : "";
     const api_url = new URL(
-        process.env.CONTENT_API_URL + "/projects" + path || "",
+        `${process.env.CONTENT_API_URL}/projects${path}${content_branch}` || "",
     );
 
     const res = await fetch(api_url, {
