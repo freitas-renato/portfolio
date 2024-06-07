@@ -41,6 +41,14 @@ export const socials = [
 
 export const experiences = [
     {
+        title: "Lab Engineer",
+        company: "Meta - Reality Labs",
+        url: "https://tech.facebook.com/reality-labs/",
+        city: "New York, NY",
+        date: "2024 - now",
+        description: "Maintain the RL device farm in New York used for automated CI tests running on AR/VR device prototypes under development. Develop device health tests, create dashboards to visualize metrics about device state, and onboard new generation prototype devices into the lab infrastructure."
+    },
+    {
         title: "Embedded Software Engineer",
         company: "PullUp",
         url: "https://pullup.com.br/",
